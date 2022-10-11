@@ -40,4 +40,25 @@ function HomePage() {
 export default HomePage;
 ```
 
+## Top Level index.js using NextJS
+
+```js
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+
+export async function getStaticProps() {
+  // getStaticProps is an NextJS function
+  // fetch data from API, DB, file..
+  // Always return an object and must include props
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS
+    }
+  }
+}
+
+export default HomePage;
+```
+
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nextjs-kxw5ie)
